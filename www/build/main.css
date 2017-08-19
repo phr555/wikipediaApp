@@ -25198,3 +25198,16 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
+
+.main-button {
+  padding: 25px;
+}
+
+a:hover, a:focus {
+  text-decoration: inherit;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}

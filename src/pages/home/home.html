@@ -1,14 +1,25 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title text-center>
+      Wikipedia Viewer
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button ion-button block class="main-button" (click)="callApi('random')">Get Random Article</button>
+  <button ion-button block class="main-button" (click)="callApi('')">Search Wikipedia</button>
+  <ion-item>
+    <ion-input text-center [(ngModel)]="input" placeholder="Text Input"></ion-input>
+  </ion-item>
+  <ion-card *ngFor="let result of results">
+    <a href="{{result.actionLink}}">
+    <ion-card-header>
+      <strong>{{result.title}}</strong>
+    </ion-card-header>
+    <ion-card-content>
+      {{result.text}}
+    </ion-card-content>
+    </a>
+  </ion-card>
 </ion-content>
